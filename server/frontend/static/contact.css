@@ -1,0 +1,114 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    
+}
+
+
+/* Header styles */
+header h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+/* Hero image styling */
+.hero-image img {
+   
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    
+}
+
+/* Contact info section */
+.contact-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.contact-info h2 {
+    color: #333;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* Social media section */
+.social-media {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social-media h2 {
+    color: #333;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+.social-media a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: #45a049;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #666;
+}
+
+.container2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.div1 {
+    display: inline-block;
+    width: 50%;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .div2 {
+    display: inline-block;
+    width: 50%;
+    background-color: #ccc;
+    padding: 20px;
+  }
