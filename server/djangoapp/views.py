@@ -61,20 +61,21 @@ def registration(request):
     # If it is a new user
     if not username_exist:
         # Create user in auth_user table
-        user = User.objects.create_user(username=username, first_name=first_name,
-        last_name=last_name,password=password, email=email)
+        user = User.objects.create_user(username=username,
+                                        first_name=first_name, last_name=last_name, password=password, email=email)
         # Login the user and redirect to list page
         login(request, user)
-        data = {"userName": username,"status": "Authenticated"}
+        data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
-    else :
-        data = {"userName": username,"error": "Already Registered"}
+    else:
+        data = {"userName": username, "error": "Already Registered"}
         return JsonResponse(data)
-#Get Cars
+
+# Get Cars
 def get_cars(request):
     count = CarMake.objects.filter().count()
     print(count)
-    if(count == 0):
+    if (count == 0):
         initiate()
     car_models = CarModel.objects.select_related('car_make')
     cars = []
