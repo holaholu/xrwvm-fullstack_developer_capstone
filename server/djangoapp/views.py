@@ -80,8 +80,8 @@ def get_cars(request):
     print(count)
     if (count == 0):
         initiate()
-    car_models = CarModel.objects   \
-    .select_related('car_make')
+    car_models = 
+    CarModel.objects.select_related('car_make')
     cars = []
     for car_model in car_models:
         cars.append({"CarModel": car_model.name,
@@ -89,11 +89,10 @@ def get_cars(request):
     return JsonResponse({"CarModels": cars})
 
 
-# Update the `get_dealerships` render list of dealerships 
+# Update the `get_dealerships` render list of dealerships
 def get_dealerships(request, state="All"):
-    if(state == "All"):
+    if (state == "All"):
         endpoint = "/fetchDealers"
-        
     else:
         endpoint = "/fetchDealers/"+state
     dealerships = get_request(endpoint)
@@ -109,7 +108,7 @@ def get_dealer_reviews(request, dealer_id):
         for review_detail in reviews:
             response = analyze_review_sentiments(review_detail['review'])
             if (response):
-                    review_detail['sentiment'] = response['sentiment']
+                review_detail['sentiment'] = response['sentiment']
         return JsonResponse({"status": 200, "reviews": reviews})
     else:
         return JsonResponse({"status": 400, "message": "Bad Request"})
@@ -128,11 +127,11 @@ def get_dealer_details(request, dealer_id):
 # Create a `add_review` view to submit a review
 def add_review(request):
     
-    # print(request.user)
-    if (request.user.is_anonymous == False):
+# print(request.user)
+    if (request.user.is_anonymous != True):
         data = json.loads(request.body)
         try:
-            # response = post_review(data)
+            post_review(data)
             return JsonResponse({"status": 200})
         except Exception:
             return JsonResponse({"status": 401, "message":
