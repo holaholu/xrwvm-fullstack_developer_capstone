@@ -62,7 +62,8 @@ def registration(request):
     if not username_exist:
         # Create user in auth_user table
         user = User.objects.create_user(username=username,
-                                        first_name=first_name, last_name=last_name,
+                                        first_name=first_name,
+                                        last_name=last_name,
                                         password=password, email=email)
         # Login the user and redirect to list page
         login(request, user)
@@ -79,7 +80,7 @@ def get_cars(request):
     print(count)
     if (count == 0):
         initiate()
-    car_models = CarModel.objects\
+    car_models = CarModel.objects \
     .select_related('car_make')
     cars = []
     for car_model in car_models:
