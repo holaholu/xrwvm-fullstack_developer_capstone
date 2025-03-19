@@ -28,9 +28,9 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ahost1="https://olaoluhimsel-8000.theiadockernext-1-labs-prod"
-ahost2="-theiak8s-4-tor01.proxy.cognitiveclass.ai"
-ahost3= ahost1 + ahost2
+ahost1 = "https://olaoluhimsel-8000.theiadockernext-1-labs-prod"
+ahost2 = "-theiak8s-4-tor01.proxy.cognitiveclass.ai"
+ahost3 = ahost1 + ahost2
 ALLOWED_HOSTS = ['localhost', ahost3]
 CSRF_TRUSTED_ORIGINS = [ahost3]
 
@@ -93,11 +93,13 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+aut1 = "django.contrib.auth.password_validation.U"
+aut2 = "serAttributeSimilarityValidator"
+aut3 = aut1 + aut2
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        aut3,
     },
     {
         'NAME':
