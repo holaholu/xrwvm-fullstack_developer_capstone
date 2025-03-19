@@ -98,7 +98,7 @@ try {
   }
 });
 
-//Express route to insert review
+//Express route to insert reviews
 app.post('/insert_review', express.raw({ type: '*/*' }), async (req, res) => {
   data = JSON.parse(req.body);
   const documents = await Reviews.find().sort( { id: -1 } );
