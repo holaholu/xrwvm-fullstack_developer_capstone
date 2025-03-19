@@ -28,14 +28,15 @@ class CarMake(models.Model):
 # such as Sedan, SUV, WAGON, etc.)
 # - Year (IntegerField) with min value 2015 and max value 2023
 # - Any other fields you would like to include in car model
+
+
 class CarModel(models.Model):
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)
     name = models.CharField(max_length=100)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
         ('SUV', 'SUV'),
         ('WAGON', 'Wagon'),
-        # Add more choices as required
     ]
     type = models.CharField(max_length=10, choices=CAR_TYPES, default='SUV')
     year = models.IntegerField(default=2023,
